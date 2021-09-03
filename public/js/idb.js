@@ -6,13 +6,6 @@ request.onupgradeneeded = function(event) {
     db.createObjectStore('new_transaction', { autoIncrement: true });
 };
 
-request.onsuccess = function(event) {
-    db = event.target.result;
-    if (navigator.onLine) {
-        uploadTransaction();
-    }
-};
-
 request.onerror = function(event) {
     console.log(event.target.errorCode);
 };
